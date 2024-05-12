@@ -1,0 +1,12 @@
+<div class="row gx-3 gy-3 w-100 gridContainer">
+@for(item of items; track item){
+    <div class="col-4">
+        <app-main-card
+        tag="{{item.type}}"
+        title="{{item.title}}"
+        description="{{item.description}}"
+        [options]=item.options>
+        </app-main-card>
+    </div>
+}
+</div>
