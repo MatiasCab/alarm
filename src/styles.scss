@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --color-tooltip: rgba(204, 204, 204, 0.8); /* Definición de una variable CSS */
+  }
+
+.tooltip--1 .tooltip-inner{
+    background-color: var(--color-tooltip);
+    color: black;
+}
+
+.tooltip--1.tooltip-inner {
+    background-color: var(--color-tooltip);
+    font-size: 125%;
+}
+
+.tooltip--1.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: var(--color-tooltip);
+}
+
+.tooltip--1.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: var(--color-tooltip);
+}
+
+.tooltip--1.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--color-tooltip);
+}
+
+.tooltip--1.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: var(--color-tooltip);
+}
