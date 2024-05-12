@@ -1,3 +1,79 @@
 .card {
-    background-color: azure;
+    background-color: rgb(173, 232, 244);
+    border-radius: 10px;
+    border-color: rgb(173, 232, 244);
 }
+
+.body {
+    padding: 0.5rem;
+}
+
+i {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.card-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-container {
+    transition-duration: all 1s ease;
+    cursor: pointer;
+}
+
+.card-container .card {
+    transition-duration: all 1s ease;
+}
+
+.card-container:hover .card, .active .card {
+    border: solid 1px rgb(0, 150, 199);
+    box-shadow: 2px 1000px 1px rgb(173, 232, 244) inset;
+}
+
+.card-container:not(:hover) {
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+
+.card-container:hover, .active {
+    transition: transform 0.5s ease;
+    transform: scale(1.08);
+}
+
+.card-container:hover .card-body, .active .card-body {
+    transition: transform 0.5s ease;
+    background-image: linear-gradient(to bottom right, rgb(255, 10, 108) 0%, rgba(128, 9, 246) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+p {
+    position: relative;
+}
+.card-container:hover p, .active p {
+    display: inline-block;
+    background-image: linear-gradient(to bottom right, rgb(255, 10, 108) 0%, rgba(128, 9, 246) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: color 0.3s ease;
+  }
+  
+  .card-container p::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgb(255, 10, 108) 0%, rgba(128, 9, 246) 100%);
+    transition: width 0.5s ease;
+  }
+  
+  .card-container:hover p::before, .active p::before {
+    width: 100%;
+  }

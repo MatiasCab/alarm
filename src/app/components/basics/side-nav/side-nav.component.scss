@@ -1,11 +1,18 @@
 .side-nav{
     height: 100%;
     border-radius: 10px;
-    width: 15rem;
+    width: 20rem;
     margin-left: 1rem;
     background-color: white;
 }
 
 h2 {
+    margin: auto;
+    text-align: center;
+}
+
+.nav-body{
+    padding-top: 1rem;
+    width: 90%;
     margin: auto;
 }
