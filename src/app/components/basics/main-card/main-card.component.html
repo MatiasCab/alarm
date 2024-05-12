@@ -1,23 +1,29 @@
 <div class="main-container">
   <div class="inner-container">
     <div class="tag-container">
-      <p class="">{{tag}}</p>
+      <app-badge labelTitle="{{ type }}"></app-badge>
     </div>
     <div class="info-container">
-      <p class="var-title">{{title}}</p>
-      <a class="show-info" data-bs-toggle="collapse" href="#info-{{title}}" aria-expanded="false" aria-controls="info">
+      <p class="var-title">{{ title }}</p>
+      <a
+        class="show-info"
+        data-bs-toggle="collapse"
+        href="#info-{{ title }}"
+        aria-expanded="false"
+        aria-controls="info"
+      >
         Click para ver la información
       </a>
-      <div class="var-info collapse" id="info-{{title}}">
+      <div class="var-info collapse" id="info-{{ title }}">
         <div class="card card-body">
-            {{description}}
-          </div>
+          {{ description }}
+        </div>
       </div>
     </div>
     <div class="value-container">
       <select class="form-select" aria-label="Default select example">
         @for (item of options; track item){
-        <option value="{{options.indexOf(item)}}">{{item}}</option>
+        <option value="{{ options.indexOf(item) }}">{{ item }}</option>
         }
       </select>
     </div>

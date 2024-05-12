@@ -13,49 +13,49 @@ export class MainContentComponent {
 items: INode[] = [
   {
     title: "HREK",
-    type: "A",
+    type: "Diagnostico",
     description: "La información sobre la primera variable La información sobre la tercera variable,La información sobre la tercera variableLa información sobre la tercera variable",
     options: ["Muy Alto", "Alto", "Medio"]
   },
   {
     title: "HRBP",
-    type: "B",
+    type: "Diagnostico",
     description: "La información sobre la segunda variable",
     options: ["Bajo", "Medio", "Alto"]
   },
   {
     title: "PBL",
-    type: "C",
+    type: "Evidencia",
     description: "La información sobre la tercera variable",
     options: ["Alto", "Muy Alto", "Bajo"]
   },
   {
     title: "VMCH",
-    type: "D",
+    type: "Diagnostico",
     description: "La información sobre la cuarta variable",
     options: ["Muy Bajo", "Bajo", "Alto"]
   },
   {
     title: "HRSA",
-    type: "E",
+    type: "Evidencia",
     description: "La información sobre la quinta variable",
     options: ["Medio", "Bajo", "Muy Alto"]
   },
   {
     title: "F",
-    type: "F",
+    type: "Intermedio",
     description: "La información sobre la sexta variable",
     options: ["Bajo", "Medio", "Muy Bajo"]
   },
   {
     title: "G",
-    type: "G",
+    type: "Intermedio",
     description: "La información sobre la séptima variable",
     options: ["Muy Alto", "Alto", "Muy Bajo"]
   },
   {
     title: "H",
-    type: "H",
+    type: "Diagnostico",
     description: "La información sobre la octava variable",
     options: ["Muy Bajo", "Bajo", "Muy Alto"]
   }
