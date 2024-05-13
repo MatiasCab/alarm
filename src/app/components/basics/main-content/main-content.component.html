@@ -1,12 +1,15 @@
-<div class="row gx-3 gy-3 w-100 gridContainer">
-@for(item of items; track item){
-    <div class="col-4">
-        <app-main-card
-        type="{{item.type}}"
-        title="{{item.title}}"
-        description="{{item.description}}"
-        [options]=item.options>
-        </app-main-card>
-    </div>
-}
+<div>
+    <div class="row gx-3 gy-3 w-100 gridContainer">
+        @for(item of items; track item){
+            <div class="col-4">
+                <app-main-card
+                [node]="item"
+                (removeNode)="removeItem($event)">
+                </app-main-card>
+            </div>
+        }
+        <div class="button-container">
+            <app-predict-button (click)="predict()"></app-predict-button>
+        </div>
+        </div>
 </div>

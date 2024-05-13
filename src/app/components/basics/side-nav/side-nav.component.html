@@ -4,13 +4,12 @@
     <div class="mb-4">
       <app-search-bar></app-search-bar>
     </div>
-    @for (variable of medicalVariables; track variable) {
+    @for (node of nodes; track nodes) {
         <app-variable-card
-        title="{{variable.name}}"
-        tooltipInfo="{{variable.info}}"
-        labelTitle="{{variable.badge.name}}"
-        labelColor="{{variable.badge.color}}"
-        ></app-variable-card>
+        title="{{node.title}}"
+        tooltipInfo="{{node.description}}"
+        labelTitle="{{node.type}}"
+        (click)="moveItem(node)"></app-variable-card>
         <div class="mt-3"></div>
     }
   </div>

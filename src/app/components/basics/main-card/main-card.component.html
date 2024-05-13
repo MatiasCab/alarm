@@ -1,29 +1,30 @@
 <div class="main-container">
   <div class="inner-container">
+    <i class="bi bi-x-circle" (click)="removeItem()"></i>
     <div class="tag-container">
-      <app-badge labelTitle="{{ type }}"></app-badge>
+      <app-badge labelTitle="{{ node.type }}"></app-badge>
     </div>
     <div class="info-container">
-      <p class="var-title">{{ title }}</p>
+      <p class="var-title">{{ node.title }}</p>
       <a
         class="show-info"
         data-bs-toggle="collapse"
-        href="#info-{{ title }}"
+        href="#info-{{ node.title }}"
         aria-expanded="false"
         aria-controls="info"
       >
         Click para ver la información
       </a>
-      <div class="var-info collapse" id="info-{{ title }}">
+      <div class="var-info collapse" id="info-{{ node.title }}">
         <div class="card card-body">
-          {{ description }}
+          {{ node.description }}
         </div>
       </div>
     </div>
     <div class="value-container">
-      <select class="form-select" aria-label="Default select example">
-        @for (item of options; track item){
-        <option value="{{ options.indexOf(item) }}">{{ item }}</option>
+      <select #selectedValue class="form-select" aria-label="Default select example">
+        @for (item of node.options; track item){
+        <option value="{{ item }}">{{ item }}</option>
         }
       </select>
     </div>
