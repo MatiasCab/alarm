@@ -2,9 +2,9 @@
   <h2>ALARM</h2>
   <div class="nav-body">
     <div class="mb-4">
-      <app-search-bar></app-search-bar>
+      <app-search-bar (wordMaker)="searchWord($event)"></app-search-bar>
     </div>
-    @for (variable of medicalVariables; track variable) {
+    @for (variable of filteredVariables; track variable) {
         <app-variable-card
         title="{{variable.name}}"
         tooltipInfo="{{variable.info}}"

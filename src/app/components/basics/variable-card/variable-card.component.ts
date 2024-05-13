@@ -14,4 +14,9 @@ export class VariableCardComponent {
   @Input() tooltipInfo?: string;
   @Input() labelTitle?: string;
   @Input() labelColor?: string;
+  isActive: boolean = false;
+
+  selectCard() {
+    this.isActive = !this.isActive;
+  }
 }

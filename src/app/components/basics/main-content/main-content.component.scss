@@ -1,6 +1,4 @@
 .gridContainer {
-    margin-left: 1em;
-    margin-right: 1em;
     overflow-y: auto;
     max-height: 100vh;
     padding-bottom: 2em;
@@ -8,4 +6,4 @@
 
 .gridContainer::-webkit-scrollbar {
     display: none;
-  }
+}

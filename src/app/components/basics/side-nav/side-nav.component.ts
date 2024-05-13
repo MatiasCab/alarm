@@ -14,6 +14,10 @@ export class SideNavComponent {
   private bagdeNames = ["Diagnostico", "Evidencia"]
   private bagdeColors = ["red"]
 
+  searchWord(word: string) {
+    this.filteredVariables = this.medicalVariables.filter(v => v.name.toLowerCase().includes(word.toLowerCase()))
+  }
+
 
   medicalVariables = [
     {
@@ -42,4 +46,5 @@ export class SideNavComponent {
     }
   ]
 
+  filteredVariables = this.medicalVariables;
 }

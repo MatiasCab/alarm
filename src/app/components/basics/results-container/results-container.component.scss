@@ -1,0 +1,32 @@
+.results-container{
+    background-color: white;
+    height: 100%;
+    width: 20rem;
+}
+
+h2 {
+    padding-top: 1rem;
+    margin: auto;
+    text-align: center;
+}
+
+
+.nav-body{
+    padding-top: 1rem;
+    width: 90%;
+    margin: auto;
+}
+
+.cards-conatiner {
+    overflow-y: scroll;
+    height: 86vh;
+}
+
+.cards-conatiner::-webkit-scrollbar {
+    display: none;
+}
+
+.cards-conatiner{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
