@@ -1,7 +1,7 @@
 .gridContainer {
     overflow-y: auto;
     max-height: 100vh;
-    padding-bottom: 2em;
+    padding-bottom: 2rem;
 }
 
 .gridContainer::-webkit-scrollbar {
@@ -12,6 +12,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
