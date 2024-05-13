@@ -22,7 +22,7 @@ export class SideNavComponent {
   private bagdeColors = ["red"]
 
   searchWord(word: string) {
-    this.filteredVariables = this.medicalVariables.filter(v => v.name.toLowerCase().includes(word.toLowerCase()))
+    this.filteredNodes = this.nodes.filter(v => v.title.toLowerCase().includes(word.toLowerCase()))
   }
 
 
@@ -71,5 +71,5 @@ export class SideNavComponent {
     }
   ];
 
-  filteredVariables = this.medicalVariables;
+  filteredNodes = this.nodes;
 }

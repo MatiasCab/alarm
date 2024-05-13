@@ -4,7 +4,7 @@
     <div class="mb-4">
       <app-search-bar (wordMaker)="searchWord($event)"></app-search-bar>
     </div>
-    @for (node of nodes; track nodes) {
+    @for (node of filteredNodes; track nodes) {
         <app-variable-card
         title="{{node.title}}"
         tooltipInfo="{{node.description}}"
