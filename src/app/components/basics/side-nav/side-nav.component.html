@@ -2,7 +2,7 @@
   <h2>ALARM</h2>
   <div class="nav-body">
     <div class="mb-4">
-      <app-search-bar></app-search-bar>
+      <app-search-bar (wordMaker)="searchWord($event)"></app-search-bar>
     </div>
     @for (node of nodes; track nodes) {
         <app-variable-card

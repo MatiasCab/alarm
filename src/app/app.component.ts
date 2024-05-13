@@ -4,11 +4,12 @@ import { VariableCardComponent } from './components/basics/variable-card/variabl
 import { SideNavComponent } from './components/basics/side-nav/side-nav.component';
 import { MainContentComponent } from './components/basics/main-content/main-content.component';
 import { INode } from './interfaces/INode';
+import { ResultsContainerComponent } from './components/basics/results-container/results-container.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, VariableCardComponent, SideNavComponent, MainContentComponent],
+  imports: [RouterOutlet, VariableCardComponent, SideNavComponent, MainContentComponent, ResultsContainerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
