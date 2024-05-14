@@ -4,9 +4,9 @@
     <div>
       <app-search-bar></app-search-bar>
       <div class="cards-conatiner">
-        <app-collapse></app-collapse>
-        <app-collapse></app-collapse>
-        <app-collapse></app-collapse>
+        <app-collapse [nodes]="getDiagnosisNodes()" [title]="'Diagnostico'"></app-collapse>
+        <app-collapse [nodes]="getEvidenceNodes()" [title]="'Evidencia'"></app-collapse>
+        <app-collapse [nodes]="getIntermediateNodes()" [title]="'Intermedio'"></app-collapse>
       </div>
     </div>
   </div>
