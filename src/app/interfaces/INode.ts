@@ -1,7 +1,9 @@
+import { IOutcomeData } from "./IPredictedNode";
+
 export interface INode {
     id: string;
     type: string;
     summary: string;
-    outcomes: string[];
+    outcomes: IOutcomeData[];
     description: string;
     }

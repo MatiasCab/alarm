@@ -1,4 +1,4 @@
 export interface IDataToPredict {
     variable: string;
-    result: string;
+    outcome: string;
 }

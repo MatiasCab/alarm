@@ -24,7 +24,7 @@
     <div class="value-container">
       <select #selectedValue class="form-select" aria-label="Default select example">
         @for (item of node.outcomes; track item){
-        <option value="{{ item }}">{{ item }}</option>
+        <option value="{{ item.id }}">{{ item.id }}</option>
         }
       </select>
     </div>

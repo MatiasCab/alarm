@@ -27,7 +27,7 @@ getDataToPredict(): IDataToPredict{
 
   let data: IDataToPredict = {
     variable: this.node.id,
-    result: this.getSelectedValue()
+    outcome: this.getSelectedValue()
   } 
   
   return data;

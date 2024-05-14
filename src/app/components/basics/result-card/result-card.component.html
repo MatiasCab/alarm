@@ -1,21 +1,24 @@
-<div class="card-container {{ false ? 'active' : '' }}">
-  <div class="body">
-    <h3 class="card-text">{{ node?.id }}</h3>
-    @for (outcome of node?.outcomes; track node) {
-    <div class="row">
-      <h6>{{ outcome.id }}</h6>
-      <div class="col-10">
-        <div class="progress">
-          <div
-            class="progress-bar bg-info"
-            role="progressbar"
-            aria-label="Info example"
-            [ngStyle]="{'width': '{{outcome.odds * 100}}%' }"
-          ></div>
+@if(node.outcomes.length > 0){
+  <div class="card-container {{ false ? 'active' : '' }}">
+    <div class="body">
+      <h3 class="card-text">{{ node.id }}</h3>
+      @for (outcome of node.outcomes; track outcome) {
+      <div class="row">
+        <h6>{{ outcome.id }}</h6>
+        <div class="col-10">
+          <div class="progress">
+            <div
+              class="progress-bar bg-info"
+              role="progressbar"
+              aria-label="Info example"
+              [ngStyle]="{'width':'{{outcome.odds*100}}' + '%'}"
+            ></div>
+          </div>
         </div>
+        <div class="col-2">{{ outcome.odds * 100 }}%</div>
       </div>
-      <div class="col-2">{{ outcome.odds * 100 }}%</div>
+      }
     </div>
-    }
   </div>
-</div>
+}
+

@@ -13,5 +13,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './result-card.component.scss',
 })
 export class ResultCardComponent {
-  @Input() node?: IPredictedNode;
+  @Input() node!: IPredictedNode;
+
+  ngOnInit() {
+    console.log(this.node);
+  }
+  odds(number: number) {
+    console.log(this.node.outcomes)
+
+  }
 }
