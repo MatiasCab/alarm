@@ -6,8 +6,8 @@
     </div>
     @for (node of filteredNodes; track nodes) {
         <app-variable-card
-        title="{{node.title}}"
-        tooltipInfo="{{node.description}}"
+        title="{{node.id}}"
+        tooltipInfo="{{node.summary}}"
         labelTitle="{{node.type}}"
         (click)="moveItem(node)"></app-variable-card>
         <div class="mt-3"></div>

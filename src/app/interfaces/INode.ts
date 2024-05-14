@@ -1,6 +1,7 @@
 export interface INode {
-    title: string;
+    id: string;
     type: string;
+    summary: string;
+    outcomes: string[];
     description: string;
-    options: string[];
     }

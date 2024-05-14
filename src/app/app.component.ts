@@ -5,6 +5,7 @@ import { SideNavComponent } from './components/basics/side-nav/side-nav.componen
 import { MainContentComponent } from './components/basics/main-content/main-content.component';
 import { INode } from './interfaces/INode';
 import { ResultsContainerComponent } from './components/basics/results-container/results-container.component';
+import { IPredictedNode } from './interfaces/IPredictedNode';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ResultsContainerComponent } from './components/basics/results-container
 export class AppComponent {
   title = 'alarm';
   options = ['Option 1', 'Option 2', 'Option 3'];
+  predictedNodes: IPredictedNode[] = [];
   nodes: INode[] = [];
   moveItem(node: INode) {
     if(!this.nodes.includes(node))
@@ -27,4 +29,9 @@ export class AppComponent {
     }
   );
 };
+
+movePredictedNodes(predictedNodes: IPredictedNode[]){
+  this.predictedNodes = predictedNodes;
+}
+
 }
