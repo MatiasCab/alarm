@@ -26,8 +26,8 @@ getSelectedValue(): string{
 getDataToPredict(): IDataToPredict{
 
   let data: IDataToPredict = {
-    variable: this.node.title,
-    result: this.getSelectedValue()
+    variable: this.node.id,
+    outcome: this.getSelectedValue()
   } 
   
   return data;

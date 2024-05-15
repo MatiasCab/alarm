@@ -1,4 +1,7 @@
 <div>
+    <div class="button-container">
+        <app-predict-button (click)="predict()"></app-predict-button>
+    </div>
     <div class="row gx-3 gy-3 w-100 gridContainer">
         @for(item of items; track item){
             <div class="col-sm-12 col-md-6 col-xl-4">
@@ -8,8 +11,6 @@
                 </app-main-card>
             </div>
         }
-        <div class="button-container">
-            <app-predict-button (click)="predict()"></app-predict-button>
-        </div>
+        
         </div>
 </div>

@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { VariableCardComponent } from '../variable-card/variable-card.component';
 import { INode } from '../../../interfaces/INode';
+import { NodeService } from '../../../services/node.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -10,9 +11,18 @@ import { INode } from '../../../interfaces/INode';
   templateUrl: './side-nav.component.html',
   styleUrl: './side-nav.component.scss'
 })
-export class SideNavComponent {
+export class SideNavComponent implements OnInit{
+
   @Output() moveItemEvent = new EventEmitter<INode>();
 
+  constructor(private nodeService:NodeService) { }
+
+  ngOnInit(){
+    this.nodeService.getNodes().subscribe((data: INode[]) => {
+      this.nodes = data;
+      this.filteredNodes = this.nodes;
+    });
+  }
   moveItem(item: INode) {
     this.moveItemEvent.emit(item);
   }
@@ -22,54 +32,11 @@ export class SideNavComponent {
   private bagdeColors = ["red"]
 
   searchWord(word: string) {
-    this.filteredNodes = this.nodes.filter(v => v.title.toLowerCase().includes(word.toLowerCase()))
+    this.filteredNodes = this.nodes.filter(v => v.id.toLowerCase().includes(word.toLowerCase()))
   }
 
 
-  nodes: INode[] = [
-    {
-      title: "HREK",
-      type: "Diagnostico",
-      description: "La información sobre la primera variable La información sobre la tercera variable,La información sobre la tercera variableLa información sobre la tercera variable",
-      options: ["Muy Alto", "Alto", "Medio"]
-    },
-    {
-      title: "HRBP",
-      type: "Diagnostico",
-      description: "La información sobre la segunda variable",
-      options: ["Bajo", "Medio", "Alto"]
-    },
-    {
-      title: "PBL",
-      type: "Evidencia",
-      description: "La información sobre la tercera variable",
-      options: ["Alto", "Muy Alto", "Bajo"]
-    },
-    {
-      title: "VMCH",
-      type: "Diagnostico",
-      description: "La información sobre la cuarta variable",
-      options: ["Muy Bajo", "Bajo", "Alto"]
-    },
-    {
-      title: "HRSA",
-      type: "Evidencia",
-      description: "La información sobre la quinta variable",
-      options: ["Medio", "Bajo", "Muy Alto"]
-    },
-    {
-      title: "F",
-      type: "Intermedio",
-      description: "La información sobre la sexta variable",
-      options: ["Bajo", "Medio", "Muy Bajo"]
-    },
-    {
-      title: "G",
-      type: "Intermedio",
-      description: "La información sobre la séptima variable",
-      options: ["Muy Alto", "Alto", "Muy Bajo"]
-    }
-  ];
+  nodes: INode[] = [];
 
   filteredNodes = this.nodes;
 }

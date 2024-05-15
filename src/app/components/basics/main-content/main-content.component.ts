@@ -4,6 +4,7 @@ import { INode } from '../../../interfaces/INode';
 import { PredictButtonComponent } from '../predict-button/predict-button.component';
 import { IDataToPredict } from '../../../interfaces/IDataToPredict';
 import { NodeService } from '../../../services/node.service';
+import { IPredictedNode } from '../../../interfaces/IPredictedNode';
 
 @Component({
   selector: 'app-main-content',
@@ -16,6 +17,7 @@ export class MainContentComponent {
 constructor(private nodeService: NodeService) { }
 @Input() items!: INode[];
 @Output() removeItemEvent = new EventEmitter<INode>();
+@Output() predictedNodesEvent = new EventEmitter<IPredictedNode[]>();
 @ViewChildren(MainCardComponent) queryMainCards!: QueryList<MainCardComponent>;
 
 removeItem(item: INode) {
@@ -29,8 +31,8 @@ predict(){
     console.log(mainCard.getDataToPredict());
   });
   console.log(toPredict);
-  this.nodeService.doPrediction(toPredict).subscribe((res: any) => {
-    console.log(res);
+  this.nodeService.doPrediction(toPredict).subscribe((res: IPredictedNode[]) => {
+    this.predictedNodesEvent.emit(res);
   });
 }
 

@@ -1,4 +1,4 @@
-<div class="card-container {{ isActive ? 'active' : ''}}" (click)="selectCard()">
+<div class="card-container">
     <div class="card">
         <div class="body">
           <h6 class="card-title">
@@ -7,6 +7,7 @@
               class="bi bi-question-circle"
               placement="top"
               [ngbTooltip]="tipContent"
+              container="body"
               tooltipClass="tooltip--1"
             ></i>
           </h6>

@@ -5,26 +5,26 @@
       <app-badge labelTitle="{{ node.type }}"></app-badge>
     </div>
     <div class="info-container">
-      <p class="var-title">{{ node.title }}</p>
+      <p class="var-title">{{ node.id }}</p>
       <a
         class="show-info"
         data-bs-toggle="collapse"
-        href="#info-{{ node.title }}"
+        href="#info-{{ node.id }}"
         aria-expanded="false"
         aria-controls="info"
       >
         Click para ver la información
       </a>
-      <div class="var-info collapse" id="info-{{ node.title }}">
+      <div class="var-info collapse" id="info-{{ node.id }}">
         <div class="card card-body">
-          {{ node.description }}
+          {{ node.summary }}
         </div>
       </div>
     </div>
     <div class="value-container">
       <select #selectedValue class="form-select" aria-label="Default select example">
-        @for (item of node.options; track item){
-        <option value="{{ item }}">{{ item }}</option>
+        @for (item of node.outcomes; track item){
+        <option value="{{ item.id }}">{{ item.id }}</option>
         }
       </select>
     </div>

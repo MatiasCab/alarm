@@ -1,10 +1,10 @@
 <p class="collapse-button" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" (click)="toggleArrow()" >
     <i [ngClass]="{'bi bi-chevron-right': !isArrowDown, 'bi bi-chevron-down': isArrowDown, 'rotate': isArrowDown}"></i>
-    Diagnosticos
+    {{title}}
 </p>
 
 <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed" class="collapse">
-    @for (variable of medicalVariables; track variable) {
-        <app-result-card></app-result-card>
+    @for (node of nodes; track node) {
+        <app-result-card [node]="node"></app-result-card>
     }
 </div>

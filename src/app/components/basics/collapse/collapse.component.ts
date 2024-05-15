@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { VariableCardComponent } from '../variable-card/variable-card.component';
 import { ResultCardComponent } from '../result-card/result-card.component';
+import { IPredictedNode } from '../../../interfaces/IPredictedNode';
 
 @Component({
   selector: 'app-collapse',
@@ -12,6 +13,10 @@ import { ResultCardComponent } from '../result-card/result-card.component';
   styleUrl: './collapse.component.scss'
 })
 export class CollapseComponent {
+  @Input() nodes?: IPredictedNode[];
+  @Input() title?: string;
+
+
   isCollapsed = true;
   isArrowDown = false;
 
@@ -20,5 +25,4 @@ export class CollapseComponent {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  medicalVariables = [1, 2, 3, 4  ]
 }
