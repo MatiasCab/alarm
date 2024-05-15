@@ -15,11 +15,13 @@ import { CommonModule } from '@angular/common';
 export class ResultCardComponent {
   @Input() node!: IPredictedNode;
 
-  ngOnInit() {
-    console.log(this.node);
-  }
-  odds(number: number) {
-    console.log(this.node.outcomes)
 
+  getPercentageStyle(per: number) {
+    return Math.round(per * 100) + '%';
   }
+
+  getPercentage(per: number) {
+    return Math.round(per * 100);
+  }
+
 }

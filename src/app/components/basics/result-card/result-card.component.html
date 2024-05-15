@@ -11,11 +11,11 @@
               class="progress-bar bg-info"
               role="progressbar"
               aria-label="Info example"
-              [ngStyle]="{'width':'{{outcome.odds*100}}' + '%'}"
+              [style.width]="getPercentageStyle(outcome.odds)"
             ></div>
           </div>
         </div>
-        <div class="col-2">{{ outcome.odds * 100 }}%</div>
+        <div class="col-2">{{ getPercentage(outcome.odds) }}%</div>
       </div>
       }
     </div>
