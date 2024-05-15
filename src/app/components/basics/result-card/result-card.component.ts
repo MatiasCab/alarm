@@ -17,7 +17,7 @@ export class ResultCardComponent {
 
 
   getPercentageStyle(per: number) {
-    return Math.round(per * 100) + '%';
+    return Math.round(per * 100) + "%";
   }
 
   getPercentage(per: number) {
