@@ -12,18 +12,27 @@ import { IPredictedNode } from '../../../interfaces/IPredictedNode';
 })
 export class ResultsContainerComponent {
   @Input() nodes?: IPredictedNode[];
+  word?: string;
 
   getDiagnosisNodes(){
-    return this.nodes?.filter(n => n.type === "Diagnostico");
+    return this.nodes?.filter(n => this.filterCriteria("Diagnostico", n));
   }
   getEvidenceNodes(){
-    return this.nodes?.filter(n => n.type === "Evidencia");
+    return this.nodes?.filter(n => this.filterCriteria("Evidencia", n));
   }
   getIntermediateNodes(){
-    return this.nodes?.filter(n => n.type === "Intermedio");
+    return this.nodes?.filter(n => this.filterCriteria("Intermedio", n));
   }
 
   searchWord(word: string) {
-    //this.filteredVariables = this.medicalVariables.filter(v => v.name.toLowerCase().includes(word.toLowerCase()))
+    this.word = word;
+  }
+
+  filterCriteria(type: string, node: IPredictedNode) {
+    let haveWord = true
+    if(this.word) {
+      haveWord = node.id.toLowerCase().includes(this.word.toLowerCase())
+    }
+    return node.type === type && haveWord
   }
 }
